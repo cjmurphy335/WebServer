@@ -225,3 +225,7 @@
 2025-01-05 09:11:36,641 - 192.168.1.45 - - [05/Jan/2025 09:11:36] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
 2025-01-05 09:16:38,924 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xc2 in position 74: invalid continuation byte
 2025-01-05 09:16:38,926 - 192.168.1.45 - - [05/Jan/2025 09:16:38] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
+2025-01-05 09:21:41,196 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xc1 in position 73: invalid start byte
+2025-01-05 09:21:41,197 - 192.168.1.45 - - [05/Jan/2025 09:21:41] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
+2025-01-05 09:26:43,805 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xa6 in position 73: invalid start byte
+2025-01-05 09:26:43,807 - 192.168.1.45 - - [05/Jan/2025 09:26:43] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
