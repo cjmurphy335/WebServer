@@ -8,28 +8,32 @@ logging.basicConfig(filename='mixed_data.log', level=logging.INFO,
 
 @app.route('/api/data', methods=['POST'])
 def post_data():
-    # Get the raw binary data from the request
     raw_data = request.get_data()
 
     try:
-        # Assume the first 10 bytes are binary, and the rest is JSON
-        binary_part = raw_data[:10]
-        json_part = raw_data[10:].decode('utf-8')
+        # Find the start of the JSON data (assuming it starts with '{')
+        json_start = raw_data.find(b'{')
 
-        # Log or save the binary part
+        if json_start == -1:
+            raise ValueError("No JSON data found")
+
+        # Extract binary and JSON parts
+        binary_part = raw_data[:json_start]
+        json_part = raw_data[json_start:].decode('utf-8')
+
+        # Log the binary part for inspection
         with open('binary_data.bin', 'wb') as f:
             f.write(binary_part)
 
         # Parse the JSON part
         parsed_json = json.loads(json_part)
-
-        # Log or process the parsed JSON
         logging.info(f"Parsed JSON data: {parsed_json}")
 
         return jsonify({"status": "success", "parsed_json": parsed_json}), 200
-    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+    except (json.JSONDecodeError, UnicodeDecodeError, ValueError) as e:
         logging.error(f"Failed to parse JSON: {e}")
         return jsonify({"error": "Malformed data"}), 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
