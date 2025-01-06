@@ -1000,3 +1000,5 @@
 2025-01-06 17:33:39,120 - 192.168.1.45 - - [06/Jan/2025 17:33:39] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
 2025-01-06 17:38:41,722 - Failed to parse JSON: 'utf-8' codec can't decode byte 0x9a in position 83: invalid start byte
 2025-01-06 17:38:41,724 - 192.168.1.45 - - [06/Jan/2025 17:38:41] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
+2025-01-06 17:43:44,343 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xb9 in position 86: invalid start byte
+2025-01-06 17:43:44,345 - 192.168.1.45 - - [06/Jan/2025 17:43:44] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
