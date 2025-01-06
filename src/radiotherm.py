@@ -23,6 +23,7 @@ def post_data():
 
         # Log the binary part for inspection
         with open('binary_data.bin', 'wb') as f:
+            f.write(json_start)
             f.write(binary_part)
 
         # Parse the JSON part
