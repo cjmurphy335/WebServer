@@ -5,3 +5,20 @@
 2025-01-07 23:04:58,531 - [33mPress CTRL+C to quit[0m
 2025-01-07 23:09:07,075 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xb7 in position 83: invalid start byte
 2025-01-07 23:09:07,076 - 192.168.1.45 - - [07/Jan/2025 23:09:07] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
+2025-01-07 23:42:58,523 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.25:5000
+2025-01-07 23:42:58,523 - [33mPress CTRL+C to quit[0m
+2025-01-07 23:44:23,758 - Received 387 bytes
+2025-01-07 23:44:23,761 - 192.168.1.45 - - [07/Jan/2025 23:44:23] "POST /api/data HTTP/1.1" 200 -
+2025-01-07 23:49:26,055 - Received 387 bytes
+2025-01-07 23:49:26,056 - 192.168.1.45 - - [07/Jan/2025 23:49:26] "POST /api/data HTTP/1.1" 200 -
+2025-01-07 23:54:28,643 - Received 387 bytes
+2025-01-07 23:54:28,645 - 192.168.1.45 - - [07/Jan/2025 23:54:28] "POST /api/data HTTP/1.1" 200 -
+2025-01-07 23:59:31,238 - Received 387 bytes
+2025-01-07 23:59:31,240 - 192.168.1.45 - - [07/Jan/2025 23:59:31] "POST /api/data HTTP/1.1" 200 -
+2025-01-08 00:04:33,832 - Received 387 bytes
+2025-01-08 00:04:33,834 - 192.168.1.45 - - [08/Jan/2025 00:04:33] "POST /api/data HTTP/1.1" 200 -
+2025-01-08 00:09:36,431 - Received 387 bytes
+2025-01-08 00:09:36,433 - 192.168.1.45 - - [08/Jan/2025 00:09:36] "POST /api/data HTTP/1.1" 200 -
