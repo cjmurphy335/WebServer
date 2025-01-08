@@ -1,0 +1,7 @@
+2025-01-07 23:04:58,531 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.25:5000
+2025-01-07 23:04:58,531 - [33mPress CTRL+C to quit[0m
+2025-01-07 23:09:07,075 - Failed to parse JSON: 'utf-8' codec can't decode byte 0xb7 in position 83: invalid start byte
+2025-01-07 23:09:07,076 - 192.168.1.45 - - [07/Jan/2025 23:09:07] "[31m[1mPOST /api/data HTTP/1.1[0m" 400 -
