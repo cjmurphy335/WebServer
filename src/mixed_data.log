@@ -22,3 +22,26 @@
 2025-01-08 00:04:33,834 - 192.168.1.45 - - [08/Jan/2025 00:04:33] "POST /api/data HTTP/1.1" 200 -
 2025-01-08 00:09:36,431 - Received 387 bytes
 2025-01-08 00:09:36,433 - 192.168.1.45 - - [08/Jan/2025 00:09:36] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 22:44:44,343 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.25:5000
+2025-01-09 22:44:44,343 - [33mPress CTRL+C to quit[0m
+2025-01-09 22:46:32,065 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': 'cc3016b4cb8c7e80dd69f3eb43984760'}
+2025-01-09 22:46:32,066 - Binary data saved to binary_data_20250109_224632.json
+2025-01-09 22:46:32,069 - 192.168.1.45 - - [09/Jan/2025 22:46:32] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 22:51:34,663 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': '223a2273756363657373227d0a000000'}
+2025-01-09 22:51:34,664 - Binary data saved to binary_data_20250109_225134.json
+2025-01-09 22:51:34,664 - 192.168.1.45 - - [09/Jan/2025 22:51:34] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 22:56:37,249 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': '223a2273756363657373227d0a000000'}
+2025-01-09 22:56:37,249 - Binary data saved to binary_data_20250109_225637.json
+2025-01-09 22:56:37,251 - 192.168.1.45 - - [09/Jan/2025 22:56:37] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 23:01:39,536 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': '223a2273756363657373227d0a000000'}
+2025-01-09 23:01:39,536 - Binary data saved to binary_data_20250109_230139.json
+2025-01-09 23:01:39,537 - 192.168.1.45 - - [09/Jan/2025 23:01:39] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 23:06:42,141 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': '223a2273756363657373227d0a000000'}
+2025-01-09 23:06:42,142 - Binary data saved to binary_data_20250109_230642.json
+2025-01-09 23:06:42,143 - 192.168.1.45 - - [09/Jan/2025 23:06:42] "POST /api/data HTTP/1.1" 200 -
+2025-01-09 23:11:44,724 - Parsed JSON: {'uuid': '5cdad4517843', 'format_ver': '102', 'eiv': '223a2273756363657373227d0a000000'}
+2025-01-09 23:11:44,724 - Binary data saved to binary_data_20250109_231144.json
+2025-01-09 23:11:44,726 - 192.168.1.45 - - [09/Jan/2025 23:11:44] "POST /api/data HTTP/1.1" 200 -
