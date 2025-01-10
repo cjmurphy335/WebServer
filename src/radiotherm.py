@@ -20,6 +20,17 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+import os
+import json
+from flask import Flask, request, jsonify
+from datetime import datetime
+
+app = Flask(__name__)
+
+# Define log file paths
+LOG_FILE = "parsed_json.log"
+BINARY_FILE = "binary_data.json"
+
 @app.route('/api/data', methods=['POST'])
 def post_data():
     try:
@@ -35,6 +46,10 @@ def post_data():
         json_part = raw_data[:json_end_index]
         parsed_json = json.loads(json_part.decode('utf-8'))
 
+        # Append parsed JSON to the log file
+        with open(LOG_FILE, 'a') as log_file:
+            log_file.write(json.dumps(parsed_json) + '\n')
+
         # Extract the binary part
         binary_part = raw_data[json_end_index:]
 
@@ -42,21 +57,25 @@ def post_data():
         eiv = parsed_json.get('eiv', 'unknown_eiv')
 
         # Prepare the output JSON structure for binary data
-        combined_output = {
+        binary_output = {
             "eiv": eiv,
             "binary_data": binary_part.hex()  # Hex encoding for JSON compatibility
         }
 
-        # Create a timestamped filename for the combined JSON data
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        combined_filename = f"combined_data_{timestamp}.json"
+        # Append the binary data to the binary file
+        if not os.path.exists(BINARY_FILE):
+            # Create a new file with an empty list if it doesn't exist
+            with open(BINARY_FILE, 'w') as binary_file:
+                json.dump([], binary_file)
 
-        # Save the combined data to a single JSON file
-        with open(combined_filename, 'w') as f:
-            json.dump(combined_output, f, indent=4)
+        # Load existing data, append the new record, and save
+        with open(BINARY_FILE, 'r+') as binary_file:
+            data = json.load(binary_file)
+            data.append(binary_output)
+            binary_file.seek(0)
+            json.dump(data, binary_file, indent=4)
 
-        # Log the successful parsing and file creation
-        app.logger.info(f"Combined data saved to {combined_filename}")
+        app.logger.info(f"Received and processed data from {request.remote_addr}")
 
         return jsonify({"status": "success", "message": "Data received and processed"}), 200
 
@@ -70,4 +89,6 @@ def post_data():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
+
 
