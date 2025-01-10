@@ -13,6 +13,13 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+import os
+import json
+from flask import Flask, request, jsonify
+from datetime import datetime
+
+app = Flask(__name__)
+
 @app.route('/api/data', methods=['POST'])
 def post_data():
     try:
@@ -35,22 +42,21 @@ def post_data():
         eiv = parsed_json.get('eiv', 'unknown_eiv')
 
         # Prepare the output JSON structure for binary data
-        binary_output = {
+        combined_output = {
             "eiv": eiv,
             "binary_data": binary_part.hex()  # Hex encoding for JSON compatibility
         }
 
-        # Create a timestamped filename for the binary data
+        # Create a timestamped filename for the combined JSON data
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        binary_filename = f"binary_data_{timestamp}.json"
+        combined_filename = f"combined_data_{timestamp}.json"
 
-        # Save the binary data to a file
-        with open(binary_filename, 'w') as f:
-            json.dump(binary_output, f, indent=4)
+        # Save the combined data to a single JSON file
+        with open(combined_filename, 'w') as f:
+            json.dump(combined_output, f, indent=4)
 
         # Log the successful parsing and file creation
-        app.logger.info(f"Parsed JSON: {parsed_json}")
-        app.logger.info(f"Binary data saved to {binary_filename}")
+        app.logger.info(f"Combined data saved to {combined_filename}")
 
         return jsonify({"status": "success", "message": "Data received and processed"}), 200
 
